@@ -308,8 +308,41 @@ void OV7725_Window_Set(u16 width,u16 height,u8 mode)
 	temp = (raw|(width&0x03)|((height&0x01)<<2));	
 	SCCB_WR_Reg(EXHCH,temp);	
 }
+extern u8 ov_sta;
+extern u8 oled_data[1024];
+extern unsigned char data[240][240];
+extern u8 ov_frame; 	//统计帧数
+void OV7725_camera_refresh(void)
+{
+	u32 i,j;
+ 	u16 color;	 
+	if(ov_sta)//有帧中断更新
+	{
 
+		OV7725_RRST=0;				//开始复位读指针 
+		OV7725_RCK_L;
+		OV7725_RCK_H;
+		OV7725_RCK_L;
+		OV7725_RRST=1;				//复位读指针结束 
+		OV7725_RCK_H; 
+		for(i=0;i<240;i++)
+		{
+			for(j=0;j<240;j++)
+			{
+				OV7725_RCK_L;
+				data[i][j]=GPIOC->IDR&0XFF;	//读数据
+				OV7725_RCK_H;   
+				OV7725_RCK_L;
+				OV7725_RCK_H;
+			}
 
+		}
+
+ 		ov_sta=0;					//清零帧中断标记
+		ov_frame++; 
+
+	} 
+}
 
 
 

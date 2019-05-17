@@ -204,7 +204,40 @@ void usart1_niming_report(u8 fun,u8*data,float x,float y,float r,u8 len)
 }
 
 
-
+void get_xy(unsigned int *x,unsigned int *y)
+{
+	 u8 STR[8]="00";
+	 u8 str_x[6]="0";
+	 u8 zero[8]="00";
+	 strcpy(STR,USART_RX_BUF);
+	if(STR[0]==49&&STR[4]==50)
+	{
+		(*x)=(STR[1]-48)*100+(STR[2]-48)*10+(STR[3]-48);
+		(*y)=(STR[5]-48)*100+(STR[6]-48)*10+(STR[7]-48);
+	}
+	else
+	{
+		//	uart_init(9600);
+		//USART_ITConfig(USART1, USART_IT_RXNE, DISABLE);
+		//USART_Cmd(USART1, DISABLE);
+		delay_ms(2);
+		(*x)=0;
+		(*y)=0;
+		//USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
+		//USART_Cmd(USART1, ENABLE);
+		//strcpy(USART_RX_BUF,zero);
+	}
+//	printf(&STR[0]);//´òÓ¡³öÀ´
+	//printf("\n");
+	str_x[0]=(*x)/100+48;
+	str_x[1]=(*x)/10%10+48;
+	str_x[2]=(*x)%10+48;
+	str_x[3]=(*y)/100+48;
+	str_x[4]=(*y)/10%10+48;
+	str_x[5]=(*y)%10+48;
+	printf(&str_x[0]);
+	printf("\n");
+}	
 
 
 

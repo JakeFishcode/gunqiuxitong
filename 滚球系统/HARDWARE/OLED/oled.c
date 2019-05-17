@@ -275,8 +275,41 @@ void OLED_Init(void)
 	OLED_Set_Pos(0,0); 	
 }  
 
+extern u8 ov_sta;
+extern u8 oled_data[1024];
+extern unsigned char data[240][240];
+extern u8 ov_frame; 	//统计帧数
+void camera_show()
+{
+    u16 hang=0,lie=0;
+    u16 num=0;
+    int i;
+	//OLED_Clear();
+    for(i=0;i < 1024;i++)
+          oled_data[i] = 0x00;
 
-
+    for(i=8;i>0;i--)
+      for(lie=0; lie < 128;lie++)//
+      {
+          for(hang=0; hang<8; hang++)//63...62
+          {
+              if(lie*3 >= 240)
+              {
+                  oled_data[num] &= ~(1<<hang);
+                  continue;
+              }
+              if((i*8-1-hang)*4 > 240)
+              {
+                  oled_data[num] &= ~(1<<hang);
+                  continue;
+              }
+              if(data[lie*3][(i*8-1-hang)*4] > 150)//缩小了像素 *3 *4
+                  oled_data[num] |= (1<<hang);
+          }
+          num++; 
+      }
+    OLED_DrawBMP(0,0,128,8,oled_data);
+}
 
 
 

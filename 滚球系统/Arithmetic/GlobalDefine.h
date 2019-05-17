@@ -1,5 +1,8 @@
 #ifndef _GlobalDefine_H
 #define _GlobalDefine_H
+
+
+
 #define pi 3.141592
 #define Pwm_Fre 50 
 #define HEIGHT 240
@@ -24,6 +27,9 @@ typedef struct
   
 }Rectangle; 
 typedef unsigned char uchar;
+#define OV7670_CS		PGout(15)  		//Æ¬Ñ¡ÐÅºÅ(OE)
+#define  OV7725 1
+#define  OV7670 2
 
 
 extern unsigned char camera_data[HEIGHT][WIDTH];

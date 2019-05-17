@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\LCD;..\HARDWARE\RTC;..\HARDWARE\RTC;..\HARDWARE\WKUP;..\HARDWARE\ADC;..\HARDWARE\DAC;..\HARDWARE\DMA;..\HARDWARE\IIC;..\HARDWARE\24CXX;..\HARDWARE\SPI;..\HARDWARE\FLASH;..\HARDWARE\TOUCH;..\HARDWARE\REMOTE;..\HARDWARE\ADXL345;..\HARDWARE\DS18B20;..\HARDWARE\NRF24L01;..\HARDWARE\SRAM;..\MALLOC;..\HARDWARE\SD;..\FATFS\exfuns;..\FATFS\src;..\USMART;..\FATFS\src\option;..\HARDWARE\SDIO;..\HARDWARE\FLASH;..\TEXT;..\PICTURE;..\HARDWARE\BEEP;..\HARDWARE\EXTI;..\HARDWARE\OV7670;..\HARDWARE\TIMER;..\HARDWARE\TPAD;..\HARDWARE\W25QXX;..\HARDWARE\OV7725;..\HARDWARE\OLED;..\Arithmetic</IncludePath>
+              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\LCD;..\HARDWARE\RTC;..\HARDWARE\RTC;..\HARDWARE\WKUP;..\HARDWARE\ADC;..\HARDWARE\DAC;..\HARDWARE\DMA;..\HARDWARE\IIC;..\HARDWARE\24CXX;..\HARDWARE\SPI;..\HARDWARE\FLASH;..\HARDWARE\TOUCH;..\HARDWARE\REMOTE;..\HARDWARE\ADXL345;..\HARDWARE\DS18B20;..\HARDWARE\NRF24L01;..\HARDWARE\SRAM;..\MALLOC;..\HARDWARE\SD;..\FATFS\exfuns;..\FATFS\src;..\USMART;..\FATFS\src\option;..\HARDWARE\SDIO;..\HARDWARE\FLASH;..\TEXT;..\PICTURE;..\HARDWARE\BEEP;..\HARDWARE\EXTI;..\HARDWARE\OV7670;..\HARDWARE\TIMER;..\HARDWARE\TPAD;..\HARDWARE\W25QXX;..\HARDWARE\OV7725;..\HARDWARE\OLED;..\Arithmetic;..\HARDWARE\INIT</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -472,6 +472,11 @@
               <FileName>oled.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\OLED\oled.c</FilePath>
+            </File>
+            <File>
+              <FileName>init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\INIT\init.c</FilePath>
             </File>
           </Files>
         </Group>

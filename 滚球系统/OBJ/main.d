@@ -46,3 +46,4 @@
 ..\obj\main.o: ..\HARDWARE\EXTI\exti.h
 ..\obj\main.o: ..\HARDWARE\OV7725\ov7725.h
 ..\obj\main.o: ..\HARDWARE\OV7725\sccb.h
+..\obj\main.o: ..\HARDWARE\INIT\init.h

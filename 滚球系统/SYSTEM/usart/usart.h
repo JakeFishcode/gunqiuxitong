@@ -34,6 +34,7 @@ extern u16 USART_RX_STA;         		//接收状态标记
 //如果想串口中断接收，请不要注释以下宏定义
 void uart_init(u32 bound);
 void usart1_niming_report(u8 fun,u8*data,float x,float y,float r,u8 len);
+void get_xy(unsigned int *x,unsigned int *y);
 #endif
 
 

@@ -35,6 +35,7 @@ void OV7725_Brightness(s8 bright);
 void OV7725_Contrast(s8 contrast);
 void OV7725_Special_Effects(u8 eft);
 void OV7725_Window_Set(u16 width,u16 height,u8 mode);
+void OV7725_camera_refresh(void);
 #endif
 
 
